@@ -14,7 +14,6 @@ class SimpleLausearvutusGrammarTest {
         legal("Y")
         legal("Z")
 
-        // TODO: võimalik, et ANTLR ei saa nende operaatorite sümbolitega hakkama
         legal("¬X")
 
         legal("(X&Y)")
@@ -25,7 +24,6 @@ class SimpleLausearvutusGrammarTest {
 
     @Test
     fun `suuremad legaalsed sisendid`() {
-        // TODO: võimalik, et ANTLR ei saa nende operaatorite sümbolitega hakkama
         legal("(¬(X&Y)→(X∨Z))")
         legal("(¬(X&(Y↔Y))→(X∨Z))")
     }

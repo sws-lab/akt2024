@@ -50,7 +50,7 @@ ext.antlr = [
 
 generateGrammarSource {
     outputDirectory = file(antlr.destinationDir)
-    arguments += ['-visitor']
+    arguments += ['-visitor', '-encoding', 'utf-8']
 }
 
 sourceSets {
