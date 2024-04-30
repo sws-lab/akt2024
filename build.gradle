@@ -68,3 +68,7 @@ clean {
 compileKotlin {
     dependsOn(generateGrammarSource)
 }
+
+compileTestKotlin {
+    dependsOn(generateTestGrammarSource)
+}
