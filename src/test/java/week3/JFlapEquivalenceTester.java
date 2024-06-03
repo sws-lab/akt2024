@@ -76,8 +76,8 @@ public class JFlapEquivalenceTester {
     }
 
     private static Automaton loadJFlapAutomaton(Path path) {
-        Automaton automaton = new Automaton();
         Map<Integer, State> states = new HashMap<>();
+        State initialState = null;
         Set<StatePair> epsilons = new HashSet<>();
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -94,7 +94,7 @@ public class JFlapEquivalenceTester {
                 state.setAccept(stateNode.getElementsByTagName("final").getLength() == 1);
 
                 if (stateNode.getElementsByTagName("initial").getLength() == 1) {
-                    automaton.setInitialState(state);
+                    initialState = state;
                 }
 
                 states.put(stateId, state);
@@ -122,6 +122,9 @@ public class JFlapEquivalenceTester {
                 }
             }
 
+            Automaton automaton = new Automaton();
+            Objects.requireNonNull(initialState, "No initial state");
+            automaton.setInitialState(initialState);
             automaton.addEpsilons(epsilons);
             automaton.restoreInvariant();
             automaton.setDeterministic(false);
