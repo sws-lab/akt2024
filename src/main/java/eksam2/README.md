@@ -83,7 +83,7 @@ Süntaksile kehtivad järgmised nõuded:
 6. Saatmislause koosneb saatja nimest, punktist (`.`), termist, noolest (`->`), vastuvõtja nimest, punktist (`.`) ja muutuja nimest.
 7. Näitleja nimi võib olla `Alice` või `Bob`.
 8. Lisaks on lubatud süntaktiline suhkur näitleja lokaalseks omistamiseks, näiteks `Alice.(x = e)` tuleb AST-is esitada kui `Alice.(e) -> Alice.x`.
-9. Tingimuslause koosneb võtmesõnast `if`, näitleja nimest, küsimärgist (`?`), võtmesõnast `then`, plokist, võtmesõnast `else`, plokist ja võtmesõnast `endif`.
+9. Tingimuslause koosneb võtmesõnast `if`, näitleja nimest, küsimärgist (`?`), termist, võtmesõnast `then`, plokist, võtmesõnast `else`, plokist ja võtmesõnast `endif`.
 10. Plokk on ühe või rohkema lause jada, mille vahel eraldajaid pole.
 11. Programm on samuti plokk.
 12. Tühisümboleid (tühikud, tabulaatorid, reavahetused) tuleb ignoreerida.
